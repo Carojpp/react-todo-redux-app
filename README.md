@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# To-Do List en React con Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es un ejemplo básico de cómo crear una aplicación To-Do List en React utilizando Redux para gestionar el estado de las tareas. A continuación, se detallan los pasos necesarios para configurar este proyecto.
 
-## Available Scripts
+## Pasos para configurar el proyecto
 
-In the project directory, you can run:
+### 1. Instalación de dependencias
 
-### `npm start`
+Asegúrate de tener Node.js y npm instalados. Luego, crea un proyecto de React con Create React App y agrega las dependencias necesarias:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npx create-react-app todo-list-redux
+cd todo-list-redux
+npm install redux react-redux 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+```bash
+my-todo-app/
+│
+├── src/
+│   ├── App.js
+│   ├── components/
+│   │   ├── Todo.js
+│   │   └── TodoList.js
+│   ├── redux/
+│   │   ├── actions.js
+│   │   ├── reducers.js
+│   │   └── types.js
+│   └── styles.js
+│
+├── public/
+│   ├── index.html
+│   └── ...
+├── node_modules/
+│
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
-### `npm test`
+Ahora, una breve explicación de cada uno de los archivos y carpetas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+src/: Esta carpeta contiene el código fuente principal de tu aplicación.
 
-### `npm run build`
+App.js: Este es el componente principal de tu aplicación React. Aquí se encuentra la lógica principal y la estructura general de la aplicación.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+components/: Una carpeta que almacena componentes reutilizables.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Todo.js: Este componente representa una tarea individual en tu lista de tareas. Aquí se muestra el nombre, la descripción y el estado (completado o no) de una tarea.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+TodoList.js: Este componente muestra la lista completa de tareas. Puede representar la lista de tareas y controlar la interacción del usuario con ellas.
 
-### `npm run eject`
+redux/: Una carpeta que contiene archivos relacionados con Redux, una biblioteca de manejo de estado.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+actions.js: En este archivo, definirías las acciones de Redux que pueden ser desencadenadas por eventos en tu aplicación. Por ejemplo, agregar una tarea o marcar una tarea como completada.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+reducers.js: Aquí se definen los reducers de Redux, que especifican cómo cambia el estado de la aplicación en respuesta a las acciones. Puedes tener múltiples reducers si es necesario.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+types.js: Define tipos de acción que se utilizan en los archivos de acciones y reducers para asegurarse de que las acciones se escriban correctamente y se manejen de manera uniforme.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+styles.js: Este archivo puede contener estilos para tus componentes utilizando Styled Components u otra biblioteca de estilos. Puedes definir estilos personalizados para mejorar la apariencia de tu aplicación.
 
-## Learn More
+public/: Esta carpeta contiene archivos públicos, como el archivo HTML principal de tu aplicación.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+index.html: Este archivo HTML es la página principal de tu aplicación React. Contiene el punto de entrada de tu aplicación y enlaza los scripts necesarios.
+node_modules/: Esta carpeta almacena las dependencias instaladas de Node.js. No necesitas administrarla manualmente; npm o yarn la gestionarán automáticamente al instalar paquetes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+package.json y package-lock.json: Estos son archivos de configuración de npm que contienen información sobre las dependencias y scripts del proyecto. package.json también incluye información sobre el nombre del proyecto, la versión y las dependencias.
